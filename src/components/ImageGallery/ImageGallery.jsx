@@ -51,7 +51,7 @@ useEffect(() => {
     };
     Fetch();
     }, [search, page]);
-
+    // function for loading next pages of images
     const handleLoadMoreClick = () => {
           setPage(state => state + 1);
         };
