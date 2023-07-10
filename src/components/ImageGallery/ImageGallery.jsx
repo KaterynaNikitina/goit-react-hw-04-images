@@ -39,7 +39,8 @@ useEffect(() => {
     
     const { hits, totalHits } = await fetchImages(search, page);
 
-    setImages(image => [...images, ...hits]);
+    // setImages(image => [...images, ...hits]);
+    setImages(image => hits);
     setTotalHits(totalHits);
 
     if (page === 1 && totalHits) toast.info(`We found ${totalHits} images`);
