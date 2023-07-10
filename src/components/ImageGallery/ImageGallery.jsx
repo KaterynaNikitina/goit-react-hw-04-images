@@ -86,7 +86,6 @@ useEffect(() => {
   );
 };
 
-
 ImageGallery.propTypes = {
   query: PropTypes.string.isRequired
 };

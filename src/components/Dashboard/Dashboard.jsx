@@ -4,15 +4,12 @@ import { ToastContainer } from 'react-toastify';
 import { Searchbar } from 'components/Searchbar/Searchbar';
 import { ImageGallery } from 'components/ImageGallery/ImageGallery';
 
-
-
 export const Dashboard = () => {
   const [query, setQuery] = useState('');
 
 const handleFormSubmit = (query) => {
   setQuery(query);
 };
-
   return (
     <div className='Dashboard'>
             <Searchbar onSubmit={handleFormSubmit} />
