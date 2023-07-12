@@ -9,18 +9,18 @@ const modalRoot = document.querySelector('#modal-root');
 export const Modal = ({ item, onClose }) => {
 
   useEffect (() => {
+    const handleEscPress = ({ code }) => {
+      if (code === 'Escape') {
+        onClose();
+      }
+    };
+
     window.addEventListener('keydown', handleEscPress);
 
     return () => {
       window.removeEventListener('keydown', handleEscPress);
     }
-  })
-
-  const handleEscPress = ({ code }) => {
-    if (code === 'Escape') {
-      onClose();
-    }
-  };
+  }, [onClose]);
 
   const handleBackdropClick = ({ currentTarget, target }) => {
     if (currentTarget === target) {

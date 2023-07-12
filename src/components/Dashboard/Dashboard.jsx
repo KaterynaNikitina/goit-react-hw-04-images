@@ -25,6 +25,9 @@ const totalPages = Math.ceil(totalHits/12);
 // function for form/request submitting
 const handleFormSubmit = (query) => {
   setQuery(query);
+  setPage(1);
+  setImages([]); 
+
 };
 // function for LoadMore button
 const handleLoadMoreClick = () => {
@@ -39,12 +42,6 @@ const onShowModal = item => {
 const toggleModal = () => {
   setShowModal(!showModal);
 };
-
-useEffect(() => {
-  setQuery(query);
-  setPage(1);
-  setImages([]);  
-}, [query]);
 
 useEffect(() => {
  if (!query && page === 1) {
@@ -74,7 +71,7 @@ useEffect(() => {
     <div className='Dashboard'>
             <Searchbar onSubmit={handleFormSubmit} />
            {/* onShowModal  */}
-            <ImageGallery query={query} images={images} onShowModal={onShowModal}/> 
+            <ImageGallery images={images} onShowModal={onShowModal}/> 
             {loading && <Loader />}
             {images.length >0 && page < totalPages && (
       <Button text='Load more' onClick={handleLoadMoreClick} />)}

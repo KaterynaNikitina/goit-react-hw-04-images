@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import { List } from 'components/ImageGallery/ImageGallery.styled';
 
-export const ImageGallery = ({ query, images, onShowModal }) => {
+export const ImageGallery = ({ images, onShowModal }) => {
   return (
     <>
       {images.length > 0 && (
@@ -22,7 +22,6 @@ export const ImageGallery = ({ query, images, onShowModal }) => {
 };
 
 ImageGallery.propTypes = {
-  query: PropTypes.string.isRequired,
   images: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
